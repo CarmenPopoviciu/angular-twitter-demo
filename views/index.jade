@@ -1,0 +1,26 @@
+extends layout
+
+block body
+  div(ng-controller='AppCtrl')
+    h2 Hello world @codefront.io!
+    div(class='search')
+      span(class="glyphicon glyphicon-search")
+      input(placeholder='Filter tweets', ng-model='search')
+    div(class='media-list')
+      div(ng-repeat="tweet in tweets | filter:search", class='list-group-item')
+        div(class="media")
+          a(class='pull-left')
+            img(class="img-rounded media-object", ng-src='{{tweet.user.image}}')
+          div(class='media-body')
+            h4(class="media-heading") {{tweet.user.name}}
+            {{tweet.text}}
+
+  script(src='/socket.io/socket.io.js')
+  script(src='bower_components/angular/angular.js')
+  script(src='bower_components/angular-route/angular-route.js')
+  script(src='bower_components/angular-socket-io/socket.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
