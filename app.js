@@ -13,14 +13,21 @@ var express = require('express'),
 var app = module.exports = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+
+/**
+ * Twitter-related
+ */
+// for testing purposes, use something even more common
+var TAG = 'angularjs'; //swirlingspectacleofcyclicrainbowsplendor
+
 var T = new Twit({
     consumer_key: '11mxKtJzxo8FNSl60wR6BB6L0',
     consumer_secret: 'jF9Y58YJHmwlGO8rQJ8EZeLQWxtAsIGEsv8QFRDB0mv4FGJplC',
     access_token: '934224026-ThcouRblpQkFDSV68guaQ3J577AlYqQ3NNdqIGzk',
     access_token_secret: 'AFhSpRkR1aZXFeg96EDQWKzUv4XyYx8IhkXL1UcSQRXOf'
 });
+var stream = T.stream('statuses/filter', { track: TAG});
 
-var stream = T.stream('statuses/filter', { track: 'am'/*'swirlingspectacleofcyclicrainbowsplendor'*/});
 stream.on('tweet', function (tweet) {
     var msg = {};
     msg.text = tweet.text;
