@@ -14,12 +14,12 @@ npm install
 
 Then grab the bower dependencies:
 ```shell
-	bower install
+bower install
 ```
 
 Finally, run the app:
 ```shell
-	node app.js
+node app.js
 ```
 
 and go to localhost:3000 in your browser
