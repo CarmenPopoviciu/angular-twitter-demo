@@ -8,13 +8,19 @@ Very simple app which tracks and displays tweets based on a given keyword. Built
 
 ### Running the app
 First install the dependencies with npm:
-	npm install
+```shell
+npm install
+```
 
 Then grab the bower dependencies:
+```shell
 	bower install
+```
 
 Finally, run the app:
+```shell
 	node app.js
+```
 
 and go to localhost:3000 in your browser
 
