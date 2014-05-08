@@ -18,7 +18,7 @@ var io = require('socket.io').listen(server);
  * Twitter-related
  */
 // for testing purposes, use something even more common
-var TAG = 'angularjs'; //swirlingspectacleofcyclicrainbowsplendor
+var TAG = 'fronttrends'; //swirlingspectacleofcyclicrainbowsplendor
 
 var T = new Twit({
     consumer_key: '11mxKtJzxo8FNSl60wR6BB6L0',
@@ -30,6 +30,7 @@ var stream = T.stream('statuses/filter', { track: TAG});
 
 stream.on('tweet', function (tweet) {
     var msg = {};
+    console.log(tweet);
     msg.text = tweet.text;
     msg.user = {
         name: tweet.user.name,
