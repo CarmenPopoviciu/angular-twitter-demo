@@ -1,11 +1,13 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
-    h2 Hello world @codefront.io!
-    div(class='search')
-      span(class="glyphicon glyphicon-search")
-      input(placeholder='Filter tweets', ng-model='search')
+  div(class='container', ng-controller='AppCtrl')
+    div(class='center-block')
+      img(src='http://codefront.io/public/images/sign.png', class='center-block')
+      h2 Hello codefront.io!
+    div(class='form-horizontal')
+      div(class='search form-group')
+        input(placeholder='Filter tweets', ng-model='search', class='form-control')
     div(class='media-list')
       div(ng-repeat="tweet in tweets | filter:search", class='list-group-item')
         div(class="media")
