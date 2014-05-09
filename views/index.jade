@@ -14,7 +14,8 @@ block body
           a(class='pull-left')
             img(class="img-rounded media-object", ng-src='{{tweet.user.profile_image_url}}')
           div(class='media-body')
-            h4(class="media-heading") {{tweet.user.name}}
+            h4(class="media-heading") 
+              a(ng-href='http://twitter.com/{{tweet.user.screen_name}}') {{tweet.user.name}}
             {{tweet.text}}
 
   script(src='/socket.io/socket.io.js')
