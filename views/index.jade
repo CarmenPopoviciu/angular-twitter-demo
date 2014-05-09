@@ -16,7 +16,8 @@ block body
           div(class='media-body')
             h4(class="media-heading") 
               a(ng-href='http://twitter.com/{{tweet.user.screen_name}}') {{tweet.user.name}}
-              {{tweet.text}}
+
+            {{tweet.text}}
             div
               button(class='btn btn-primary', ng-click='tweet.clicked = !tweet.clicked') More info
               div(class='info', ng-show='tweet.clicked') Language: {{tweet.lang}}, Retweeted: {{tweet.retweet_count}}
