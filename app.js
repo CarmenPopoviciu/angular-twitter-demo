@@ -18,7 +18,7 @@ var io = require('socket.io').listen(server);
  * Twitter-related
  */
 // for testing purposes, use something even more common
-var TAG = 'fronttrends'; //swirlingspectacleofcyclicrainbowsplendor
+var TAG = 'codefrontio'; //swirlingspectacleofcyclicrainbowsplendor
 
 var T = new Twit({
     consumer_key: '11mxKtJzxo8FNSl60wR6BB6L0',
@@ -37,7 +37,7 @@ stream.on('tweet', function (tweet) {
         image: tweet.user.profile_image_url
     };
 
-    io.sockets.emit('tweets', msg);
+    io.sockets.emit('tweets', tweet);
 });
 
 

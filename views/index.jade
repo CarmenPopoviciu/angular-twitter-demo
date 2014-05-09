@@ -12,7 +12,7 @@ block body
       div(ng-repeat="tweet in tweets | filter:search", class='list-group-item')
         div(class="media")
           a(class='pull-left')
-            img(class="img-rounded media-object", ng-src='{{tweet.user.image}}')
+            img(class="img-rounded media-object", ng-src='{{tweet.user.profile_image_url}}')
           div(class='media-body')
             h4(class="media-heading") {{tweet.user.name}}
             {{tweet.text}}
