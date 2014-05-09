@@ -28,4 +28,12 @@ describe('twitter app', function () {
     search.sendKeys('yolo');
     expect(element.all(by.repeater('tweet in tweets')).count()).toBe(1);
   });
+
+  it('should clear filter', function () {
+    var search = element(by.model('search'));
+    search.sendKeys('yolo');
+    expect(element.all(by.repeater('tweet in tweets')).count()).toBe(1);
+    search.clear();
+    expect(element.all(by.repeater('tweet in tweets')).count()).toBe(3);
+  });
 });
