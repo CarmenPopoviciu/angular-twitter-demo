@@ -17,7 +17,6 @@ describe('Controller: AppCtrl', function() {
             ioSocket: mockIoSocket,
             scope: scope
         });
-        spy = jasmine.createSpy('tweetsSpy');
 
         ctrl = $controller('AppCtrl', {
             '$scope': scope,
@@ -29,14 +28,18 @@ describe('Controller: AppCtrl', function() {
         expect(scope.tweets).toBeDefined();
     });
 
-    /*it('should push a new tweet to the tweets array', inject(function($rootScope) {
-        spyOn(mockIoSocket, 'emit').andCallThrough();
-        //socket.on('tweets', spy);
-        // before the socket emits the 'tweets' event
-        expect(scope.tweets.length).toEqual(1);
+    it('should attach a deleteTweet method on the scope', function() {
+        expect(scope.deleteTweet).toBeDefined();
+    });
 
-        //mockIoSocket.emit('tweets', {text: "Hello world"});
-        //expect(spy).not.toHaveBeenCalled();
+    it('should delete a tweet', function() {
+        expect(scope.tweets.length).toEqual(3);
+        scope.deleteTweet(1);
         expect(scope.tweets.length).toEqual(2);
-    }));*/
+    });
+
+    it('should descendingly sort the tweets by date', function() {
+        expect(scope.tweets[1].text).toContain('FULL SPECTRUM');
+        expect(scope.tweets[2].text).toContain('Hello');
+    });
 });
