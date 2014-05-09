@@ -18,9 +18,9 @@ angular.module('myApp.controllers', []).
           },{
             text: 'Hello #codefrontio! We hope you enjoy the talk!',
             user: {
-              profile_image_url: 'http://pbs.twimg.com/profile_images/449147152036397057/u0bWmFuc_normal.jpeg',
-              name: 'Pascal Precht ʕ•̫͡•ʔ',
-              screen_name: 'PascalPrecht'
+              profile_image_url: 'http://pbs.twimg.com/profile_images/3465736275/e6c51a0587a7b57638dbbbda281fa90f_normal.jpeg',
+              name: 'Carmen Popoviciu',
+              screen_name: 'Carmen'
             },
             lang: 'en',
             retweet_count: 0,
