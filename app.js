@@ -31,12 +31,8 @@ var stream = T.stream('statuses/filter', { track: TAG});
 stream.on('tweet', function (tweet) {
     var msg = {};
     console.log(tweet);
-    msg.text = tweet.text;
-    msg.user = {
-        name: tweet.user.name,
-        image: tweet.user.profile_image_url
-    };
-
+    
+    tweet.clicked = false;
     io.sockets.emit('tweets', tweet);
 });
 
