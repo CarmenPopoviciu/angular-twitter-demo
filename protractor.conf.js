@@ -8,6 +8,7 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  baseUrl: 'http://localhost:3000',
   // Spec patterns are relative to the current working directly when
   // protractor is called.
   specs: ['spec/e2e/*.spec.js'],
