@@ -5,7 +5,6 @@ describe('Controller: AppCtrl', function() {
     var scope;
     var mockIoSocket;
     var socket;
-    var spy;
 
     // load the controller's module
     beforeEach(module('myApp'));

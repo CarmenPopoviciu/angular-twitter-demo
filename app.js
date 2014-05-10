@@ -18,7 +18,7 @@ var io = require('socket.io').listen(server);
  * Twitter-related
  */
 // for testing purposes, use something even more common
-var TAG = 'codefrontio'; //swirlingspectacleofcyclicrainbowsplendor
+var TAG = 'swirlingspectacleofcyclicrainbowsplendor';
 
 var T = new Twit({
     consumer_key: '11mxKtJzxo8FNSl60wR6BB6L0',
